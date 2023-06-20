@@ -1,6 +1,6 @@
 Flask
 python-dotenv
 numpy
-opencv-python
 requests
 opencv-python
+waitress

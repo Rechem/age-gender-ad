@@ -3,6 +3,9 @@ import cv2
 import numpy as np
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -106,5 +109,7 @@ def detect_age_gender():
                 "message": "Internal Error",
                 "data": None}, 500
 
+
 if __name__ == '__main__':
-    app.run(port=9000)
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=80)
